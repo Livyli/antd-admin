@@ -14,7 +14,8 @@
     "react-dom": "^15.4.1",
     "react-draft-wysiwyg": "^1.8.1",
     "react-helmet": "^5.0.0",
-    "recharts": "^0.19.0"
+    "recharts": "^0.19.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "axios": "^0.15.3",
@@ -45,6 +46,9 @@
   "scripts": {
     "dev": "set BROWSER=none&&set HOST=0.0.0.0&&roadhog server",
     "lint": "eslint --fix --ext .js src",
-    "build": "roadhog build --analyze"
-  }
+    "build": "roadhog build --analyze",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
